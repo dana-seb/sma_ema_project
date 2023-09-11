@@ -121,8 +121,8 @@ class SMAEMA():
         perf = raw["CStrategy"].iloc[-1]
         # out-/underperformance of strategy
         outperf = perf - raw["CReturns"].iloc[-1]
-        pd.options.display.max_rows = 100
-        print(raw.head(100))
+        pd.options.display.max_rows = 50
+        print(raw.head(50))
         print([round(perf, 6), round(outperf, 6)])
         # do I have to print everything to the console?
 
