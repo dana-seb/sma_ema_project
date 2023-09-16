@@ -74,7 +74,7 @@ class SMAEMA():
         raw["SMA"] = raw["Price"].rolling(self.SMA).mean()
         raw["EMA"] = raw["Price"].ewm(
             span=self.EMA, min_periods=self.EMA).mean()
-        pd.options.display.max_rows = 400
+        pd.options.display.max_rows = 100
         print(raw)
 
     """def set_parameters(self, SMA = None, EMA = None):
@@ -232,12 +232,13 @@ class SMAEMA():
 
 # df = SMAEMA("USD_CAD", 50, 50, "2023-01-01", "2023-09-01", .00007)
 # df.data
-df = SMAEMA("EUR_USD", 43, 36, "2004-01-01", "2023-09-01", .00007)
-df.test_strategy()
+df = SMAEMA("EUR_USD", 43, 36, "2020-01-01", "2023-09-01", .00007)
+# df.test_strategy()
+
 
 # print(pd.set_option("display.max_rows", 1200))
 
-# df.plot_results()
+df.plot_results()
 # df.update_and_run(SMAEMA)
 
 # df.set_parameters(75, 75)
